@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.25)
 
 project(MagicSigner)
-
-add_library(${PROJECT_NAME} SHARED library.cpp)
+set(PROJECT_SOURCES
+    library.def
+    library.cpp
+)
+add_library(${PROJECT_NAME} SHARED ${PROJECT_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE crypt32)
 
